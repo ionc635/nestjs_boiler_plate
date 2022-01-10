@@ -1,38 +1,38 @@
-// import {
-//   PrimaryGeneratedColumn,
-//   Column,
-//   UpdateDateColumn,
-//   CreateDateColumn,
-// } from 'typeorm';
+import {
+  PrimaryGeneratedColumn,
+  Column,
+  UpdateDateColumn,
+  CreateDateColumn,
+} from 'typeorm';
 
-// export abstract class BaseEntity {
-//   @PrimaryGeneratedColumn('uuid')
-//   id: string;
+export abstract class BaseEntity {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-//   @Column({ type: 'boolean', default: true })
-//   isActive: boolean;
+  @Column({ type: 'boolean', default: true })
+  isActive: boolean;
 
-//   @Column({ type: 'boolean', default: false })
-//   isArchived: boolean;
+  @Column({ type: 'boolean', default: false })
+  isArchived: boolean;
 
-//   @CreateDateColumn({
-//     type: 'date',
-//     default: () => 'CURRENT_TIMESTAMP',
-//   })
-//   createDateTime: Date;
+  @CreateDateColumn({
+    type: 'date',
+    default: () => 'CURRENT_TIMESTAMP',
+  })
+  createDateTime: Date;
 
-//   @Column({ type: 'varchar', length: 300 })
-//   createdBy: string;
+  @Column({ type: 'varchar', length: 300 })
+  createdBy: string;
 
-//   @UpdateDateColumn({
-//     type: 'date',
-//     default: () => 'CURRENT_TIMESTAMP',
-//   })
-//   lastChangedDateTime: Date;
+  @UpdateDateColumn({
+    type: 'date',
+    default: () => 'CURRENT_TIMESTAMP',
+  })
+  lastChangedDateTime: Date;
 
-//   @Column({ type: 'varchar', length: 300 })
-//   lastChangedBy: string;
+  @Column({ type: 'varchar', length: 300 })
+  lastChangedBy: string;
 
-//   @Column({ type: 'varchar', length: 300, nullable: true })
-//   internalComment: string | null;
-// }
+  @Column({ type: 'varchar', length: 300, nullable: true })
+  internalComment: string | null;
+}
