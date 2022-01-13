@@ -1,19 +1,16 @@
 {
   "type": "mysql",
-  "host": "127.0.0.1",
+  "host": "localhost",
   "port": 3306,
   "username": "root",
   "password": "943408",
   "database": "test",
-  "entities": [
-    "**/*.entity{.ts,.js}"
-  ],
-  "migrationsTableName": "migration",
-  "migrations": [
-    "src/migration/*.ts"
-  ],
+  "entities": ["src/**/*.entity{.ts,.js}"],
+  "synchronize": true,
+  "migrationsTableName": "migrations",
+  "migrations": ["./src/migrations/*.ts"],
   "cli": {
-    "migrationsDir": "src/migration"
+      "migrationsDir": "migrations"
   },
-  "ssl": false
+  "autoLoadEntities": true
 }

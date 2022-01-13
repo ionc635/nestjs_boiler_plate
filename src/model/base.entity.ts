@@ -1,38 +1,16 @@
 import {
   PrimaryGeneratedColumn,
-  Column,
   UpdateDateColumn,
   CreateDateColumn,
-} from 'typeorm';
+} from "typeorm";
 
-export abstract class BaseEntity {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+export class BaseEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-  @Column({ type: 'boolean', default: true })
-  isActive: boolean;
+  @CreateDateColumn({ nullable: true })
+  createdAt: Date;
 
-  @Column({ type: 'boolean', default: false })
-  isArchived: boolean;
-
-  @CreateDateColumn({
-    type: 'date',
-    default: () => 'CURRENT_TIMESTAMP',
-  })
-  createDateTime: Date;
-
-  @Column({ type: 'varchar', length: 300 })
-  createdBy: string;
-
-  @UpdateDateColumn({
-    type: 'date',
-    default: () => 'CURRENT_TIMESTAMP',
-  })
-  lastChangedDateTime: Date;
-
-  @Column({ type: 'varchar', length: 300 })
-  lastChangedBy: string;
-
-  @Column({ type: 'varchar', length: 300, nullable: true })
-  internalComment: string | null;
+  @UpdateDateColumn({ nullable: true })
+  updatedAt: Date;
 }
