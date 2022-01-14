@@ -10,7 +10,9 @@
   "migrationsTableName": "migrations",
   "migrations": ["./src/migrations/*.ts"],
   "cli": {
-      "migrationsDir": "migrations"
+    "migrationsDir": "./src/migrations"
   },
-  "autoLoadEntities": true
+  "autoLoadEntities": true,
+  "seeds": ["./src/seeds/**/*{.ts,.js}"],
+  "factories": ["./src/factories/**/*{.ts,.js}"]
 }
