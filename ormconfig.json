@@ -5,7 +5,7 @@
   "username": "root",
   "password": "943408",
   "database": "test",
-  "entities": ["src/**/*.entity{.ts,.js}"],
+  "entities": ["src/**/entities/*.entity{.ts,.js}"],
   "synchronize": true,
   "migrationsTableName": "migrations",
   "migrations": ["./src/migrations/*.ts"],
