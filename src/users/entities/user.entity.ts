@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToMany,
+  ManyToMany,
+} from "typeorm";
+import { Service } from "../../services/entities/service.entity";
 import { Comment } from "../../comments/entities/comment.entity";
 
 @Entity()
@@ -15,6 +22,9 @@ export class User {
   @Column({ type: "varchar", length: 300 })
   nickname: string;
 
-//   @OneToMany((type) => Comment, (comment) => comment.user)
-//   comments: Comment[];
+  @OneToMany(() => Service, (service) => service.users)
+  services: Service[];
+
+  @ManyToMany(() => Comment, (comment) => comment.users)
+  comments: Comment[];
 }

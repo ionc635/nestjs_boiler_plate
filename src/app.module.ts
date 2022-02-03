@@ -3,12 +3,18 @@ import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Connection } from "typeorm";
-import { UsersModule } from './users/users.module';
-import { CommentsModule } from './comments/comments.module';
-import { ServicesModule } from './services/services.module';
+import { UsersModule } from "./users/users.module";
+import { CommentsModule } from "./comments/comments.module";
+import { ServicesModule } from "./services/services.module";
+// import { getConnectionOptions } from "typeorm";
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), UsersModule, CommentsModule, ServicesModule],
+  imports: [
+    TypeOrmModule.forRoot(),
+    UsersModule,
+    CommentsModule,
+    ServicesModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

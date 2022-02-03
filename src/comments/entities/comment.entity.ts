@@ -2,10 +2,10 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  ManyToOne,
-  JoinColumn,
+  ManyToMany,
+  JoinTable,
 } from "typeorm";
-// import { User } from "../../users/entities/service.entity";
+import { User } from "../../users/entities/user.entity";
 
 @Entity()
 export class Comment {
@@ -20,4 +20,8 @@ export class Comment {
 
   @Column()
   message: string;
+
+  @ManyToMany(() => User, (user) => user.comments)
+  @JoinTable({ name: "user_comment" })
+  users: User[];
 }
