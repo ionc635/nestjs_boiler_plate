@@ -6,11 +6,13 @@ import { Connection } from "typeorm";
 import { UsersModule } from "./users/users.module";
 import { CommentsModule } from "./comments/comments.module";
 import { ServicesModule } from "./services/services.module";
+import { ConfigModule } from "@nestjs/config";
 // import { getConnectionOptions } from "typeorm";
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
+    ConfigModule.forRoot(),
     UsersModule,
     CommentsModule,
     ServicesModule,
